@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farhan Abbas</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0F0;
+            font-family: 'Monaco', monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .terminal {
+            background-color: #000;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            height: 400px;
+            overflow-y: scroll;
+            white-space: pre-wrap;
+        }
+
+        h1.header {
+            color: #0F0;
+            text-decoration: underline;
+            font-size: 36px;
+            margin: 20px 0;
+        }
+
+        .section {
+            padding: 20px;
+            background-color: #000;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section p {
+            font-size: 24px;
+            line-height: 1.5;
+            color: #0F0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        a {
+            color: #0F0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #F00;
+        }
+
+        .prompt {
+            color: #0F0;
+        }
+
+        .command {
+            color: #0F0;
+        }
+
+        .output {
+            color: #0F0;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .output:hover {
+            background-color: #0F0;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <pre>
+<span class="prompt">root@fani:</span><span class="command">~#</span> <span class="output" onclick="showAbout()">cat about.txt</span>
+<span class="prompt">root@fani:</span><span class="command">~#</span> <span class="output" onclick="showBlogs()">cat blogs.txt</span>
+<span class="prompt">root@fani:</span><span class="command">~#</span> <span class="output" onclick="showProfiles()">cat profiles.txt</span>
+</pre>
+    </div>
+    
+    <div id="about" class="section">
+        <header>
+            <h1 class="header">About Me</h1>
+        </header>
+        <p>I'm a passionate cyber Security researcher bug bounty hunter and ethical hacker dedicated to safeguarding digital landscapes. My mission is to uncover vulnerabilities and fortify online security for a safer digital world.</p>
+    </div>
+
+    <div id="blogs" class="section">
+        <header>
+            <h1 class="header">Blogs</h1>
+        </header>
+        <ul>
+            <li><a href="https://fanimalikhack.medium.com/xss-powerful-methodology-for-beginners-797633a2efd0">XSS Methodology for Beginners</a></li>
+            <li><a href="https://infosecwriteups.com/how-instagram-helped-me-to-exploit-xss-f1772311ad1a">How Instagram Helped Me To Exploit XSS 🔥</a></li>
+        </ul>
+    </div>
+
+    <div id="profiles" class="section">
+        <header>
+            <h1 class="header">Profiles</h1>
+        </header>
+        <ul>
+            <li><a href="https://twitter.com/fanimalikhack">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/in/fanimalikhack/">LinkedIn</a></li>
+            <li><a href="https://hackerone.com/fanimalikhack">HackerOne</a></li>
+            <li><a href="https://github.com/fanimalikhack">GitHub</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function showAbout() {
+            document.getElementById("about").classList.add("active");
+            document.getElementById("blogs").classList.remove("active");
+            document.getElementById("profiles").classList.remove("active");
+        }
+
+        function showBlogs() {
+            document.getElementById("about").classList.remove("active");
+            document.getElementById("blogs").classList.add("active");
+            document.getElementById("profiles").classList.remove("active");
+        }
+
+        function showProfiles() {
+            document.getElementById("about").classList.remove("active");
+            document.getElementById("blogs").classList.remove("active");
+            document.getElementById("profiles").classList.add("active");
+        }
+    </script>
+</body>
+</html>
